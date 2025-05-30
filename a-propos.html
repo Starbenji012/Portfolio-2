@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./photo2.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>A propos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Bodoni';
+            outline: none;
+            border: none;
+            text-decoration: none;
+            list-style: none;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --blue: #4176fc;
+            --bg: #293854;
+            --bg2: #201f24;
+            --link: #ffeddf;
+            --light: #fdfdfd;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: var(--bg2);
+            color: var(--link);
+            position: relative;
+        }
+
+        section {
+            padding: 10rem 7% 2rem;
+            min-height: 100vh;
+        }
+
+        span {
+            color: var(--blue);
+        }
+
+        .btn {
+            display: inline-block;
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 1rem 2.8rem;
+            border-radius: 2rem;
+            transition: 1s ease-in-out;
+            font-size: 2rem;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+            color: var(--light);
+            box-shadow: 0 0 1rem var(--blue);
+        }
+
+        header {
+            position: fixed;
+            z-index: 100;
+            background: var(--bg2);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 4rem;
+            color: var(--link);
+            font-weight: 800;
+        }
+
+        .logo span {
+            font-weight: 400;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navigation a {
+            font-size: 2rem;
+            color: var(--link);
+            margin-left: 4rem;
+            transition: .2s ease-in-out;
+            position: relative;
+        }
+
+        .navigation a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 0%;
+            height: 1px;
+            background: var(--blue);
+            transition: width .2s ease-in-out;
+        }
+
+        .navigation a:hover {
+            color: var(--blue);
+        }
+
+        .navigation a:hover::before {
+            width: 100%;
+        }
+
+        #menu-burger {
+            font-size: 3.6rem;
+            cursor: pointer;
+            color: var(--light);
+            display: none;
+        }
+
+        .a-propos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            background: var(--bg2);
+        }
+
+        .a-propos .img {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        .a-propos img {
+            width: 35vw;
+            max-width: 220px;
+            border: .2rem solid var(--light);
+            border-radius: 50%;
+            transition: 0.2s linear;
+        }
+
+        .a-propos img:hover {
+            box-shadow: 0 0 20px var(--blue);
+        }
+
+        .a-propos-content {
+            flex: 2 1 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .a-propos-content h2 {
+            font-size: 4rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .a-propos-content p {
+            font-size: 2rem;
+            margin: 2rem 0 3rem;
+            text-align: center;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-media a {
+            color: var(--blue);
+            font-size: 3rem;
+            transition: color 0.2s;
+        }
+
+        .social-media a:hover {
+            color: var(--light);
+        }
+
+        .footer-txt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 0;
+            background: var(--bg2);
+            color: var(--light);
+            font-size: 1.5rem;
+            border-top: 1px solid var(--blue);
+        }
+
+        .footer-txt p {
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        @media screen and (max-width:1000px) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+        @media screen and (max-width:700px) {
+            nav {
+                padding: 2rem 3%;
+            }
+
+            footer {
+                padding: 10rem 3% 2rem;
+            }
+        }
+
+        @media screen and (max-width:610px) {
+            .logo {
+                font-size: 3.5rem;
+                color: var(--link);
+                font-weight: 400;
+            }
+
+            .logo span {
+                font-weight: 200;
+            }
+
+            #menu-burger {
+                display: block;
+            }
+
+            .navigation {
+                display: none;
+                position: absolute;
+                flex-direction: column;
+                align-items: start;
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 2rem 3%;
+                background: var(--bg2);
+                border-top: .1rem solid rgba(0, 0, 0, .2);
+                z-index: 100;
+            }
+
+            .navigation.active {
+                display: flex;
+            }
+
+            .navigation a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+            }
+
+            .a-propos {
+                flex-direction: column;
+            }
+
+            .a-propos img {
+                width: 70vw;
+                margin-top: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="icon">
+            <a href="" class="logo">KNB<span>Coding</span></a>
+            <i id="menu-burger" class='bx bx-menu'></i>
+        </div>
+        <nav class="navigation">
+            <a href="index.html">Accueil</a>
+            <a href="a-propos.html">A propos</a>
+            <a href="vision.html">Vision</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="a-propos" id="a-propos">
+        <div class="img">
+            <img src="./photo2.jpg" alt="">
+        </div>
+        <div class="a-propos-content">
+            <h2>A <span>propos</span></h2>
+            <p>
+                Diplômée d'État 2024-2025 en section Technique option Commercial & Gestion au lycée Toyokana.<br>
+                Étudiante à l'Université Protestante au Congo dans la Faculté de Sciences Informatiques en Licence 1
+                LMD,
+                ingénieure junior et passionnée par la création de sites web et d'applications.
+            </p>
+            <a href="./KINTAUDI.pdf" class="btn" target="_blank">Télécharger mon CV</a>
+
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-txt">
+            <p>&copy; 2025 KNB<span>Coding</span> — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuIcon = document.querySelector("#menu-burger");
+        const nav = document.querySelector(".navigation");
+
+        menuIcon.addEventListener("click", () => {
+            menuIcon.classList.toggle("bx-x");
+            nav.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./photo2.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Portfolio KNBCoding</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Bodoni';
+            outline: none;
+            border: none;
+            text-decoration: none;
+            list-style: none;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --blue: #4176fc;
+            --bg: #293854;
+            --bg2: #201f24;
+            --link: #ffeddf;
+            --light: #fdfdfd;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: var(--bg2);
+            color: var(--light);
+            position: relative;
+        }
+
+        section {
+            padding: 5rem 4% 2rem;
+            min-height: 100vh;
+        }
+
+        span {
+            color: var(--blue);
+        }
+
+        .btn {
+            display: inline-block;
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 1rem 2.8rem;
+            border-radius: 2rem;
+            transition: 1s ease-in-out;
+            font-size: 2rem;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+            color: var(--link);
+            box-shadow: 0 0 1rem var(--blue);
+        }
+
+        header {
+            position: relative;
+            z-index: 100;
+            background: var(--bg2);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 4rem;
+            color: var(--link);
+            font-weight: 800;
+        }
+
+        .logo span {
+            font-weight: 400;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navigation a {
+            font-size: 2rem;
+            color: var(--link);
+            margin-left: 4rem;
+            transition: .2s ease-in-out;
+            position: relative;
+        }
+
+        .navigation a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 0%;
+            height: 1px;
+            background: var(--blue);
+            transition: width .2s ease-in-out;
+        }
+
+        .navigation a:hover {
+            color: var(--blue);
+        }
+
+        .navigation a:hover::before {
+            width: 100%;
+        }
+
+        #menu-burger {
+            font-size: 3.6rem;
+            cursor: pointer;
+            color: var(--link);
+            display: none;
+        }
+
+        .accueil {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .accueil img {
+            border: .2rem solid var(--light);
+            border-radius: 50%;
+            transition: 0.2s linear;
+            width: 35vw;
+            max-width: 100%;
+        }
+
+        .accueil img:hover {
+            box-shadow: 0 0 20px var(--blue);
+        }
+
+        .accueil-content h2 {
+            margin: 5px;
+            font-size: 3rem;
+        }
+
+        .accueil-content h3 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .accueil-content h1 {
+            font-size: 5.6rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .accueil-content p {
+            font-size: 2rem;
+            padding: 5px;
+        }
+
+        .social-media a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            font-size: 1.6rem;
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            border-radius: 50%;
+            margin: 3rem 1.5rem 3rem 0;
+            transition: background .2s ease-in-out;
+        }
+
+        .social-media a:hover {
+            background: var(--blue);
+            box-shadow: 0 0 1rem var(--blue);
+            color: var(--light);
+        }
+
+        .social-media a i {
+            font-size: 2rem;
+        }
+
+        .footer-txt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 0;
+            background: var(--bg2);
+            color: var(--light);
+            font-size: 1.5rem;
+            border-top: 1px solid var(--blue);
+        }
+
+        .footer-txt p {
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        @media screen and (max-width:1000px) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+        @media screen and (max-width:700px) {
+            nav {
+                padding: 2rem 3%;
+            }
+
+            footer {
+                padding: 10rem 3% 2rem;
+            }
+        }
+
+        @media screen and (max-width:610px) {
+            .logo {
+                font-size: 3.5rem;
+                color: var(--link);
+                font-weight: 400;
+            }
+
+            .logo span {
+                font-weight: 200;
+            }
+
+            #menu-burger {
+                display: block;
+            }
+
+            .navigation {
+                display: none;
+                position: absolute;
+                flex-direction: column;
+                align-items: start;
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 2rem 3%;
+                background: var(--bg2);
+                border-top: .1rem solid rgba(0, 0, 0, .2);
+                z-index: 100;
+            }
+
+            .navigation.active {
+                display: flex;
+            }
+
+            .navigation a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+            }
+
+            .accueil {
+                flex-direction: column;
+            }
+
+            .accueil-content h3 {
+                font-size: 2.6rem;
+            }
+
+            .accueil-content h2 {
+                font-size: rem;
+            }
+
+            .accueil-content h1 {
+                font-size: 5rem;
+            }
+
+            .accueil-img {
+                width: 70vw;
+                margin-top: 4rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="icon">
+            <a href="" class="logo">KNB<span>Coding</span></a>
+            <i id="menu-burger" class='bx bx-menu'></i>
+        </div>
+        <nav class="navigation">
+            <a href="index.html">Accueil</a>
+            <a href="a-propos.html">A propos</a>
+            <a href="vision.html">Vision</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="accueil" id="accueil">
+        <div class="accueil-content">
+            <div class="img" align="center">
+                <img src="./photo2.jpg" alt="">
+            </div>
+            <h1>Bonjour je suis</h1>
+            <h3>KINTAUDI NDINDA BENJAMINE</h3>
+            <h2>Et je suis un <span>Ingénieur Junior</span></h2>
+            <p>Je vous souhaite la bienvenue sur mon monde numérique.</p>
+            <p>Un portfolio où la créativité débute.</p>
+            <div class="social-media" align="center">
+                <a href="https://www.facebook.com/Benjamine.Ndinda" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/benjamine.ndinda/" target="_blank"><i
+                        class='bx bxl-instagram'></i></a>
+                <a href="https://wa.me/+243975993140" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-txt">
+            <p>&copy; 2025 KNB<span>Coding</span> — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuIcon = document.querySelector("#menu-burger");
+        const nav = document.querySelector(".navigation");
+
+        menuIcon.addEventListener("click", () => {
+            menuIcon.classList.toggle("bx-x");
+            nav.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

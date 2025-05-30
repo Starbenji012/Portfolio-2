@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./photo2.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Contacte</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Bodoni';
+            outline: none;
+            border: none;
+            text-decoration: none;
+            list-style: none;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --blue: #4176fc;
+            --bg: #293854;
+            --bg2: #201f24;
+            --link: #ffeddf;
+            --light: #fdfdfd;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: var(--bg2);
+            color: var(--link);
+            position: relative;
+        }
+
+        section {
+            padding: 10rem 7% 2rem;
+            min-height: 100vh;
+        }
+
+        span {
+            color: var(--blue);
+        }
+
+        .btn {
+            display: inline-block;
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 1rem 2.8rem;
+            border-radius: 2rem;
+            transition: 1s ease-in-out;
+            font-size: 2rem;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+            color: var(--link);
+            box-shadow: 0 0 1rem var(--blue);
+        }
+
+
+
+        /*NAVIGATION ET HEADER*/
+        /*----------*/
+
+        header {
+            position: fixed;
+            z-index: 100;
+            background: var(--bg2);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header.sticky {
+            border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        }
+
+        .logo {
+            font-size: 4rem;
+            color: var(--link);
+            font-weight: 800;
+        }
+
+        .logo span {
+            font-weight: 400;
+        }
+
+        .navigation a {
+            font-size: 2rem;
+            color: var(--link);
+            margin-left: 4rem;
+            transition: .2s ease-in-out;
+            position: relative;
+        }
+
+        .navigation a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 0%;
+            height: 1px;
+            background: var(--blue);
+            transition: width .2s ease-in-out;
+        }
+
+        .navigation a:hover,
+        .navigation,
+        a.active {
+            color: var(--blue);
+        }
+
+        .navigation a:hover::before,
+        .navigation a.active {
+            width: 100%;
+        }
+
+        #menu-burger {
+            font-size: 3.6rem;
+            cursor: pointer;
+            color: var(--light);
+            display: none;
+        }
+
+        .contact h2 {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact form {
+            width: 70rem;
+            margin: 1rem auto;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact form .input-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .contact form .input-box input,
+        .contact form textarea {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            color: var(--link);
+            background: var(--bg);
+            border-radius: 0.8rem;
+            margin: 0.7rem 0;
+        }
+
+        .contact form .input-box input {
+            width: 49%;
+        }
+
+        .contact form textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        form input[type="submit"] {
+            cursor: pointer;
+            background: none;
+        }
+
+        .footer-txt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 0;
+            background: var(--bg2);
+            color: var(--light);
+            font-size: 1.5rem;
+            border-top: 1px solid var(--blue);
+        }
+
+        .footer-txt p {
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        @media screen and (max-width:1000px) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+        @media screen and (max-width:700px) {
+            nav {
+                padding: 2rem 3%;
+            }
+
+            .contact {
+                min-height: auto;
+            }
+
+            footer {
+                padding: 10rem 3% 2rem;
+            }
+        }
+
+        @media screen and (max-width:610px) {
+            .logo {
+                font-size: 3.5rem;
+                color: var(--link);
+                font-weight: 400;
+            }
+
+            .logo span {
+                font-weight: 200;
+            }
+
+            #menu-burger {
+                display: block;
+            }
+
+            .navigation {
+                display: none;
+                position: absolute;
+                flex-direction: column;
+                align-items: start;
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 2rem 3%;
+                background: var(--bg2);
+                border-top: .1rem solid rgba(0, 0, 0, .2);
+                z-index: 100;
+            }
+
+            .navigation.active {
+                display: flex;
+            }
+
+            .navigation a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            html {
+                font-size: 50%;
+            }
+
+            .contact form .input-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="icon">
+            <a href="" class="logo">KNB<span>Coding</span></a>
+            <i id="menu-burger" class='bx bx-menu'></i>
+        </div>
+        <nav class="navigation">
+            <a href="index.html">Accueil</a>
+            <a href="a propos.html">A propos</a>
+            <a href="vision.html">Vision</a>
+            <a href="contact.html">contacte</a>
+        </nav>
+    </header>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Mes <span>Contacter</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Nom">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Téléphone">
+                <input type="text" placeholder="Demande">
+            </div>
+            <textarea placeholder="Message"></textarea>
+            <input type="submit" value="Envoyer" class="btn">
+        </form>
+
+    </section>
+
+
+    <footer>
+        <div class="footer-txt">
+            <p>Copyright &copy; 2025 - KNB <span>Coding</span> - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBurger = document.getElementById('menu-burger');
+        const navigation = document.querySelector('.navigation');
+
+        menuBurger.addEventListener('click', () => {
+            navigation.classList.toggle('active');
+        });
+
+    </script>
+</body>
+
+</html>
